@@ -1,0 +1,45 @@
+\chapter{Glosario y vocabulario}\label{chpt:glosario}
+
+En esta sección se explican, a grandes rasgos, algunos de los términos utilizados a lo largo del documento. El glosario se ha colocado al final para no interrumpir la lectura; cuando se introduzca vocabulario poco común, se podrá hacer referencia a esta sección para consultar su significado.
+
+\section{Apoapsis y periapsis}
+
+\paragraph{Apoapsis}
+El apoapsis (también llamado \emph{apoastro}) es el punto de una órbita elíptica en el que el objeto orbitante se encuentra a mayor distancia del cuerpo central. Este punto puede recibir distintos nombres dependiendo del cuerpo alrededor del cual se orbita. Por ejemplo, si el cuerpo central es la Tierra se denomina \emph{apogeo}, mientras que si es el Sol se denomina \emph{afelio}.
+
+En la figura \ref{fig_apoapsis} se representa el apoapsis de una órbita con una excentricidad relativamente grande. La excentricidad es una medida de cuánto se aparta la forma de una órbita de una circunferencia. 
+
+\begin{figure}[!ht]
+  \centering
+  \begin{tikzpicture}[>=Stealth]
+    \draw[fill=orange] (0,0) circle (6pt);
+    \draw[dashed,thick] (0.92,0) ellipse (2.2 and 2);
+    \draw[fill=blue!20] (3.12,0) circle (3pt);
+    \draw[<-] (3.3,0) -- ++(.6,0) node[right]{Apoapsis};
+  \end{tikzpicture}
+  \caption{El cuerpo central (círculo anaranjado) se encuentra en uno de los
+  focos de la elipse. El apoapsis corresponde al punto de la órbita en el que
+  el objeto orbitante (círculo azul) se encuentra a mayor distancia del cuerpo
+  central.}
+  \label{fig_apoapsis}
+\end{figure}
+
+\paragraph{Periapsis}
+El periapsis (también llamado \emph{periastro}) es, de manera análoga al apoapsis, el punto de una órbita elíptica en el que el objeto orbitante se encuentra a menor distancia del cuerpo central. Al igual que el apoapsis, puede recibir distintos nombres dependiendo del cuerpo central. Si este es la Tierra se denomina \emph{perigeo}, mientras que si es el Sol se denomina \emph{perihelio}.
+
+\begin{figure}[!ht]
+  \centering
+  \begin{tikzpicture}[>=Stealth]
+    \draw[fill=orange] (0,0) circle (6pt);
+    \draw[dashed,thick] (0.92,0) ellipse (2.2 and 2);
+    \draw[fill=blue!20] (-1.28,0) circle (3pt);
+    \draw[<-] (-1.48,0) -- ++(-.6,0) node[left]{Periapsis};
+  \end{tikzpicture}
+  \caption{El periapsis corresponde al punto de la órbita en el que el objeto
+  orbitante se encuentra a menor distancia del cuerpo central.}
+  \label{fig_periapsis}
+\end{figure}
+
+Nótese que el periapsis y el apoapsis corresponden a puntos específicos de una órbita elíptica, y que el cuerpo central se encuentra situado en uno de los focos de la elipse.
+
+El caso de una órbita perfectamente circular es especial. En ella todos los puntos de la órbita se encuentran a la misma distancia del cuerpo central, por lo que no existe un punto único que pueda distinguirse como apoapsis o periapsis. En este caso, las distancias correspondientes al apoapsis y al periapsis son iguales.

@@ -1,0 +1,52 @@
+\documentclass[spanish,a4paper]{report}
+
+\usepackage{polyglossia}
+\usepackage{fontspec}
+
+\setdefaultlanguage{spanish}
+\setmainfont{CMU Serif}
+\setsansfont{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text}
+
+\usepackage{ccicons}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+\usepackage{cancel}
+
+\usepackage{pgfplots}
+\usepackage{tikz}
+% this line is recomended by the pgfplots lastes stable version
+% see https://pgfplots.sourceforge.net/pgfplots.pdf
+\pgfplotsset{compat=1.18}
+
+\usetikzlibrary{arrows.meta}
+
+\input{addons/environments.tex}
+
+\title{Mecánica de Órbitas para simuladores}
+\author{Elio Valentino Anci}
+
+\begin{document}
+  \maketitle
+
+  \begin{abstract}
+    Este documento cubre las matemáticas necesarias para calcular y ejecutar distintas maniobras orbitales, incluyendo:
+    \begin{enumerate}
+      \item Cálculo del apoapsis (AP) y periapsis (PE) de una órbita.
+      \item Modificación del apoapsis y periapsis mediante maniobras orbitales.
+      \item Cambios de plano orbital para alinear la órbita con la de un objetivo.
+      \item Maniobras de fase para sincronizar el encuentro entre dos naves.
+      \item Transferencias interplanetarias.
+    \end{enumerate}
+  \end{abstract}
+
+  \tableofcontents
+  
+  \include{chapter/one/main}
+
+  \include{chapter/zero/main}
+
+\end{document}
