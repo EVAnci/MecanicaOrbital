@@ -1,4 +1,4 @@
-\documentclass[spanish,a4paper]{report}
+\documentclass[a4paper]{report}
 
 \usepackage{polyglossia}
 \usepackage{fontspec}
@@ -15,6 +15,15 @@
 \usepackage{tcolorbox}
 \tcbuselibrary{breakable}
 \usepackage{cancel}
+\usepackage[backend=biber,style=authoryear-icomp]{biblatex}
+\addbibresource{main.bib}
+
+\usepackage{siunitx}
+\sisetup{
+  locale = FR,
+  separate-uncertainty = true,
+  per-mode = symbol
+}
 
 \usepackage{pgfplots}
 \usepackage{tikz}
@@ -44,9 +53,14 @@
   \end{abstract}
 
   \tableofcontents
+
+  \include{chapter/preface/main}
   
   \include{chapter/one/main}
+  \include{chapter/two/main}
 
   \include{chapter/zero/main}
+
+  \printbibliography
 
 \end{document}

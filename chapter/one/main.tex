@@ -1,17 +1,60 @@
 \chapter{Herramientas matemáticas}
 
-En este capítulo se introducirán las matemáticas y geometría necesaria para comprender el resto de capítulos. Se verá una breve introducción a la geometría analítica y a vectores.
+En este capítulo se introducirán las herramientas matemáticas y geométricas necesarias para comprender los capítulos posteriores. En particular, se presentarán algunos conceptos de geometría analítica y álgebra vectorial que serán utilizados repetidamente a lo largo del documento.
+
+Si ya se encuentra familiarizado con estos conceptos, puede pasar directamente al capítulo \ref{chpt:movimiento_y_gravitacion}.
+
+Si desea profundizar en los temas tratados en este capítulo, puede consultar el libro de \textcite{geometriaraichman}.
 
 \section{Vectores}
 
-En primer lugar se desarrollan conceptos relativos a \emph{espacios vectoriales}, estudiando sus características y propiedades. Esto será muy útil ya que proporcionará una estructura matemática para describir magnitudes como velocidad, posición, aceleración, entre otras; que serán especialmente útiles en la mayor parte del libro.
+En mecánica es frecuente trabajar con cantidades que no pueden describirse únicamente mediante un número. Por ejemplo, decir que un objeto se desplaza a una velocidad de \qty{10}{\meter\per\second} indica qué tan rápido se mueve, pero no indica hacia dónde lo hace. Para describir completamente su velocidad es necesario especificar también una dirección.
 
-A continuación se presentarán geométrica y analíticamente los vectores en espacios bi y tridimensional, donde se dan las definiciones y las operaciones entre ellos, estableciendo las propiedades básicas.
+Los vectores proporcionan una herramienta matemática para representar esta clase de magnitudes. A lo largo del documento se utilizarán para describir, entre otras cosas, la posición, la velocidad y la aceleración de los objetos. 
 
-\subsection{Espacios Vectoriales}
+Comenzaremos estudiando vectores en dos dimensiones, ya que permiten introducir sus propiedades de manera sencilla y representarlas gráficamente. Posteriormente extenderemos estos conceptos al espacio tridimensional, que será el que utilizaremos para describir las órbitas.
 
-Para poder definir un espacio vectorial primero debe conocer la definición de vector,
-\begin{definition}[Vector]
-  Un vector \(\vec{v}\) en el plano xy es un par ordenado de números reales \((v_1,v_2)\). Los números \(v_1\) y \(v_2\) reciben el nombre de componentes del vector \(\vec{v}\).
+\subsection{Vectores en dos dimensiones}
+
+Consideremos un sistema de coordenadas cartesianas formado por dos ejes perpendiculares, \(x\) e \(y\).
+
+\begin{definition}[Vector en \(\mathbb{R}^2\)]\label{def:vector_r2}
+  Un vector \(\vec{v}\) en \(\mathbb{R}^2\) puede representarse mediante un par   ordenado de números reales
+  \[
+    \vec{v}=(v_1,v_2),
+  \]
+  donde \(v_1\) y \(v_2\) reciben el nombre de \emph{componentes} del vector.
 \end{definition}
 
+El conjunto de todos los pares ordenados de números reales se denota por
+\[
+  \mathbb{R}^2
+  =
+  \{(x,y)\mid x,y\in\mathbb{R}\}.
+\]
+
+Geométricamente, un vector puede representarse mediante un segmento orientado, es decir, un segmento al que se le asigna un sentido, como se ilustra en la figura \ref{fig:vec_r2}. De esta manera, además de sus componentes, podemos asociar al vector una longitud y una dirección.
+
+\begin{figure}[!ht]
+  \centering 
+  \begin{tikzpicture}[>=Stealth]
+    \draw[gray,->] (-.1,0) -- (5,0)node[right]{\(x\)};
+    \draw[gray,->] (0,-.1) -- (0,3)node[left]{\(y\)};
+    \draw[dotted] (3,0)node[below]{\(v_1\)} -- (3,2) -- (0,2) node[left]{\(v_2\)};
+    \draw[->,red] (0,0) -- node[sloped,above]{\(\vec{v}\)} (3,2);
+  \end{tikzpicture}
+  \caption{Representación gráfica de un vector en \(\mathbb{R}^2\).}
+  \label{fig:vec_r2}
+\end{figure}
+
+Un vector particularmente importante es el \emph{vector nulo},
+\[
+  \vec{0}=(0,0),
+\]
+cuyas componentes son ambas iguales a cero.
+
+Aunque en este contexto un vector y un punto pueden representarse de manera similar mediante pares de números, es importante no confundir ambos conceptos. Un punto representa una posición en el espacio, mientras que un vector posee una magnitud, una dirección y un sentido, y puede utilizarse para representar distintas cantidades físicas.
+
+Por el momento será suficiente con tener presente esta distinción. Su significado se hará más evidente al estudiar las operaciones entre vectores y, posteriormente, al utilizarlos para describir magnitudes como el desplazamiento, la posición, la velocidad y la aceleración.
+
+\subsection{Operaciones con vectores}
